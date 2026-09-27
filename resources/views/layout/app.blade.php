@@ -9,8 +9,19 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU90FeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEWIH" crossorigin="anonymous">
 </head>
 
-<body>
-    @yield('content')
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    {{-- Memanggil Komponen Navbar --}}
+    @include('components.navbar')
+
+    {{-- Konten Utama Halaman --}}
+    <main class="container flex-grow-1 my-4">
+        @yield('content')
+    </main>
+
+    {{-- Memanggil Komponen Footer --}}
+    @include('components.footer')
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY31HB60NNkmXc5s9fDVZLESAAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

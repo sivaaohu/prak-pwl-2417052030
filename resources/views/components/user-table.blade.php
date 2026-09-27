@@ -1,27 +1,20 @@
-@extends('layouts.app')
-
-@section('content')
 <div class="card shadow-sm border-0">
-    <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
-        <h4 class="card-title fw-bold text-primary mb-0">Daftar Pengguna</h4>
-        <a href="{{ route('user.create') }}" class="btn btn-primary btn-sm px-3">+ Tambah User</a>
-    </div>
     <div class="card-body p-0">
         <div class="table-responsive">
-            <table class="table table-hover align-middle mb-0">
-                <thead class="table-light">
+            <table class="table table-hover table-striped align-middle mb-0">
+                <thead class="table-primary">
                     <tr>
-                        <th class="ps-4">No</th>
+                        <th class="ps-3">ID</th>
                         <th>Nama</th>
-                        <th>NPM / NIM</th>
+                        <th>NPM</th>
                         <th>Kelas</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($users as $index => $user)
+                    @forelse ($users as $user)
                     <tr>
-                        <td class="ps-4 fw-bold text-secondary">{{ $index + 1 }}</td>
-                        <td class="fw-semibold">{{ $user->nama }}</td>
+                        <td class="ps-3 fw-bold">{{ $user->id }}</td>
+                        <td>{{ $user->nama }}</td>
                         <td><span class="badge bg-secondary">{{ $user->nim }}</span></td>
                         <td><span class="badge bg-info text-dark">{{ $user->nama_kelas }}</span></td>
                     </tr>
@@ -35,4 +28,3 @@
         </div>
     </div>
 </div>
-@endsection
