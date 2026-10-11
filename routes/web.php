@@ -13,3 +13,6 @@ Route::post('/user', [UserController::class, 'store'])->name('user.store');
 Route::get('/matakuliah', [MataKuliahController::class, 'index'])->name('mata-kuliah.index');
 Route::get('/matakuliah/create', [MataKuliahController::class, 'create'])->name('mata-kuliah.create'); // Disamakan menggunakan '-'
 Route::post('/matakuliah', [MataKuliahController::class, 'store'])->name('mata-kuliah.store');
+Route::get('/matakuliah/{id}/edit', [MataKuliahController::class, 'edit'])->name('mata-kuliah.edit');
+Route::put('/matakuliah/{id}', [MataKuliahController::class, 'update'])->name('mata-kuliah.update');
+Route::delete('/matakuliah/{id}', [MataKuliahController::class, 'destroy'])->name('mata-kuliah.destroy');
